@@ -1,10 +1,30 @@
-module "default_instance" {
-    source = "hashicorp/google//google_compute_instance"
+terraform {
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+      version = "4.24.0"
+    }
+  }
+}
+
+provider "google" {
+  # Configuration options
+  project = var.project_id
+  region = var.region
+  zone = var.zone
+}
+
+
+resource "google_compute_instance" "default_instance" {
     name         = var.name
     machine_type = var.machine_type
     zone         = var.zone
 
-    boot_disk = var.boot_disk
+    boot_disk {
+        initialize_params {
+        image = var.image
+        }
+    }
     
     network_interface = var.network_interface
 

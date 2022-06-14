@@ -33,9 +33,9 @@ variable "allow_stopping_for_update" {
   default = true
 }
 
-variable "boot_disk" {
-  type    = object()
-  default = "{initialize_params {image = debian-cloud/debian-9}}"
+variable "image" {
+  type    = string
+  default = "debian-cloud/debian-9"
 }
 
 variable "network_interface" {
@@ -43,7 +43,3 @@ variable "network_interface" {
       network = string
   })
 }
-
-
-
-  
