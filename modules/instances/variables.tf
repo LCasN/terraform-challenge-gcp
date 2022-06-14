@@ -10,7 +10,7 @@ variable "zone" {
 
 variable "project_id" {
   type    = string
-  default = "qwiklabs-gcp-03-c0ba2d7352e4"
+  default = "qwiklabs-gcp-03-2a8961094173"
 }
 
 variable "name" {

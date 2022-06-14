@@ -34,9 +34,7 @@ resource "google_compute_instance" "default_instance" {
         }
     }
 
-    metadata_startup_script =<<-EOT
-    #!/bin/bash
-    EOT
+    metadata_startup_script = "#!/bin/bash"
     allow_stopping_for_update = var.allow_stopping_for_update
   
 }
