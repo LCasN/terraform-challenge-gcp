@@ -38,8 +38,6 @@ variable "image" {
   default = "debian-cloud/debian-9"
 }
 
-variable "network_interface" {
-  type    = object({
-      network = string
-  })
+variable "network" {
+  type    = string
 }

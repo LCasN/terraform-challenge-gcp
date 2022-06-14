@@ -25,8 +25,14 @@ resource "google_compute_instance" "default_instance" {
         image = var.image
         }
     }
-    
-    network_interface = var.network_interface
+       
+    network_interface {
+        network = var.network
+
+        access_config {
+        // Ephemeral public IP
+        }
+    }
 
     metadata_startup_script =<<-EOT
     #!/bin/bash
